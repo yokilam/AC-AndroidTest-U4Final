@@ -21,14 +21,10 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorViewHol
     private List<String> colorNames;
     private HashMap<String, String> colorDict;
 
-    public ColorAdapter(List<String> colors) {
+    public ColorAdapter(List<String> colors, HashMap<String, String> colorMap) {
         Sort.selectionSort(colors, true);
         colorNames = colors;
-        colorDict = new HashMap<>();
-        colorDict.put("indigo", "#4b0082");
-        colorDict.put("green", "#00ff00");
-        colorDict.put("blue", "#0000ff");
-        colorDict.put("red", "#ff0000");
+        colorDict = colorMap;
         // TODO: adding all the colors would be tedious, instead fetch it from https://github.com/operable/cog/blob/master/priv/css-color-names.json
     }
 
