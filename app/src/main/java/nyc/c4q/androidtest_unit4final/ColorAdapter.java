@@ -25,7 +25,6 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorViewHol
         Sort.selectionSort(colors, true);
         colorNames = colors;
         colorDict = colorMap;
-        // TODO: adding all the colors would be tedious, instead fetch it from https://github.com/operable/cog/blob/master/priv/css-color-names.json
     }
 
     @Override
