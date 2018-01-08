@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         RecyclerView recyclerView = findViewById(R.id.rv);
-        ColorAdapter adapter = new ColorAdapter(makeColors("Blue", "Red", "Yellow", "Green"));
+        ColorAdapter adapter = new ColorAdapter(makeColors("Blue", "Red", "Purple", "Indigo", "Orange", "Brown", "Black", "Green"));
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
