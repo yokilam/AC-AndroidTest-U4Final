@@ -16,7 +16,7 @@ output> origin  https://github.com/YOUR_USERNAME/AC-AndroidTest-U4Final.git (fet
 output> origin  https://github.com/YOUR_USERNAME/AC-AndroidTest-U4Final.git (push)
 ```
 
-**Do not clone this repository.**
+**Do not *clone* this repository, *fork* it**
 
 
 
