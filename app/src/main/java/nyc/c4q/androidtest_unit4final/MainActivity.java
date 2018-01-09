@@ -12,8 +12,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ColorAdapter adapter;
-    private HashMap<String, String> colorDict;
-    private List<String> colorsList;
+    protected HashMap<String, String> colorDict;
+    protected List<String> colorsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
