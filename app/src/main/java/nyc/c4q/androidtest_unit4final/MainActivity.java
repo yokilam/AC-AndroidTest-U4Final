@@ -20,26 +20,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerView = findViewById(R.id.rv);
         colorDict = new HashMap<>();
         colorDict.put("indigo", "#4b0082");
         colorDict.put("green", "#00ff00");
         colorDict.put("blue", "#0000ff");
         colorDict.put("red", "#ff0000");
-        // TODO: adding all the colors would be tedious, instead fetch it from the url below
+        // TODO: adding all the colors and their values would be tedious, instead fetch it from the url below
         // https://raw.githubusercontent.com/operable/cog/master/priv/css-color-names.json
 
-        colorsList = makeColors();
+        colorsList = new ArrayList<>();
+        String[] names = new String[] {"blue", "red", "purple", "indigo", "orange", "brown", "black", "green"};
+        for(String n: names) colorsList.add(n);
+
+        RecyclerView recyclerView = findViewById(R.id.rv);
         adapter = new ColorAdapter(colorsList, colorDict);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    // TODO: Add options menu with the item "Info" which is always visible
+    // TODO: When "Info" menu item is clicked, display the fragment InfoFragment
+    // TODO: If InfoFragment is already visible and I click "Info", remove InfoFragment from the view.
 
-    private List<String> makeColors() {
-        String[] names = new String[] {"blue", "red", "purple", "indigo", "orange", "brown", "black", "green"};
-        List<String> colors = new ArrayList<>();
-        for(String n: names) colors.add(n);
-        return colors;
-    }
 }
