@@ -41,5 +41,5 @@ public class MainActivity extends AppCompatActivity {
     // TODO: Add options menu with the item "Info" which is always visible
     // TODO: When "Info" menu item is clicked, display the fragment InfoFragment
     // TODO: If InfoFragment is already visible and I click "Info", remove InfoFragment from the view.
-
+    // Link to creating options menu: https://github.com/C4Q/AC-Android/tree/v2/Android/Lecture-9-Menus-and-Navigation#anatomy-of-menu-xml
 }
