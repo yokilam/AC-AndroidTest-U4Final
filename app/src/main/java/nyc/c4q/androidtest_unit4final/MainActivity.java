@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ColorAdapter adapter;
     private HashMap<String, String> colorDict;
+    private List<String> colorsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,15 @@ public class MainActivity extends AppCompatActivity {
         // TODO: adding all the colors would be tedious, instead fetch it from the url below
         // https://raw.githubusercontent.com/operable/cog/master/priv/css-color-names.json
 
-        adapter = new ColorAdapter(makeColors(), colorDict);
+        colorsList = makeColors();
+        adapter = new ColorAdapter(colorsList, colorDict);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
 
     private List<String> makeColors() {
-        String[] names = new String[] {"Blue", "Red", "Purple", "Indigo", "Orange", "Brown", "Black", "Green"};
+        String[] names = new String[] {"blue", "red", "purple", "indigo", "orange", "brown", "black", "green"};
         List<String> colors = new ArrayList<>();
         for(String n: names) colors.add(n);
         return colors;
