@@ -125,7 +125,16 @@ public class MainActivityTest {
     public void clickOnNameShowsToast() {
         MainActivity mainActivity = mActivityRule.getActivity();
         onView(withText("blue")).perform(click());
-        onView(withText("blue has a HEX value of #0000ff"))
+        onView(withText("has a HEX value"))
+                .inRoot(withDecorView(not(is(mainActivity.getWindow().getDecorView()))))
+                .check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void clickOnNameShowsToastWithoutHardCodedMessage() {
+        MainActivity mainActivity = mActivityRule.getActivity();
+        onView(withText("red")).perform(click());
+        onView(withText("red has a HEX value of #ff0000"))
                 .inRoot(withDecorView(not(is(mainActivity.getWindow().getDecorView()))))
                 .check(matches(isDisplayed()));
     }
