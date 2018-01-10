@@ -24,10 +24,13 @@ output> origin  https://github.com/YOUR_USERNAME/AC-AndroidTest-U4Final.git (pus
 The test app displays color names, colored in their color names.
 
 The initial app should look like:
-![initial_app](initial_app.png)
+
+<img src="initial_app.png" alt="Drawing" width="300"/>
+
 
 The final app should look like:
-![final_app](final_app.png)
+
+<img src="final_app.png" alt="Drawing" width="300"/>
 
 ### The differences
 - All the color names are displayed with their respective colors in the final app
