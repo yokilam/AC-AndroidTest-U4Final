@@ -91,6 +91,7 @@ For Android (everything else):
 * To view android test results, open in the file in AndroidTestUnit4Final/app/build/reports/androidTests/connected/index.html
 * There should be some passing tests and some failing tests. If not, see an instructor or TA before continuing.
 
+You may not *modify* the test code.
 
 **Do not submit code that does not compile**
 

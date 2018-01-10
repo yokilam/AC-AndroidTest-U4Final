@@ -19,6 +19,8 @@ public class Sort {
      */
     public static void selectionSort(List<String> list, boolean isAscending) {
         // TODO: Implement selection sort.
+        // You may not use Collections.sort or its equivalent
+        // You may not implement another sorting algorithm that is not "selection sort"
         // Tip: Try a version without ordering first.
     }
 }
