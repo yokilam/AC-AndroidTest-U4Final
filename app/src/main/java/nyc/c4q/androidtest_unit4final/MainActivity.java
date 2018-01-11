@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        linearLayout= findViewById(R.id.fragment_container);
+        linearLayout = findViewById(R.id.fragment_container);
 
         colorDict = new HashMap <>();
         colorDict.put("indigo", "#4b0082");
@@ -55,18 +55,12 @@ public class MainActivity extends AppCompatActivity {
         // TODO: adding all the colors and their values would be tedious, instead fetch it from the url below
         // https://raw.githubusercontent.com/operable/cog/master/priv/css-color-names.json
 
-
-
-                colorsList = new ArrayList <>();
+        colorsList = new ArrayList <>();
         String[] names = new String[]{"blue", "red", "purple", "indigo", "orange", "brown", "black", "green"};
         for (String n : names) colorsList.add(n);
 
         recyclerView = findViewById(R.id.rv);
-//        adapter = new ColorAdapter(colorsList, colorDict);
-//        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://raw.githubusercontent.com/")
@@ -80,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call <Color> call, Response <Color> response) {
                 Log.d(TAG, "onResponse: " + response.body().toString());
-                Color color= response.body();
+                Color color = response.body();
                 colorDict.put("black", color.getBlack());
                 colorDict.put("purple", color.getPurple());
                 colorDict.put("orange", color.getOrange());
@@ -113,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.info:
-                if (linearLayout.getVisibility()==View.VISIBLE) {
+                if (linearLayout.getVisibility() == View.VISIBLE) {
                     linearLayout.setVisibility(View.GONE);
                 } else {
                     linearLayout.setVisibility(View.VISIBLE);
