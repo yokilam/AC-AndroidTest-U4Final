@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected HashMap <String, String> colorDict;
     protected List <String> colorsList;
     LinearLayout linearLayout;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,19 @@ public class MainActivity extends AppCompatActivity {
         colorDict.put("red", "#ff0000");
         // TODO: adding all the colors and their values would be tedious, instead fetch it from the url below
         // https://raw.githubusercontent.com/operable/cog/master/priv/css-color-names.json
+
+
+
+                colorsList = new ArrayList <>();
+        String[] names = new String[]{"blue", "red", "purple", "indigo", "orange", "brown", "black", "green"};
+        for (String n : names) colorsList.add(n);
+
+        recyclerView = findViewById(R.id.rv);
+//        adapter = new ColorAdapter(colorsList, colorDict);
+//        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://raw.githubusercontent.com/")
@@ -73,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 colorDict.put("brown", color.getBrown());
 
                 Log.d(TAG, "onResponse: " + colorDict.get("black"));
+                adapter = new ColorAdapter(colorsList, colorDict);
+                recyclerView.setAdapter(adapter);
 
             }
 
@@ -81,16 +97,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, "onFailure: " + t);
             }
         });
-
-
-                colorsList = new ArrayList <>();
-        String[] names = new String[]{"blue", "red", "purple", "indigo", "orange", "brown", "black", "green"};
-        for (String n : names) colorsList.add(n);
-
-        RecyclerView recyclerView = findViewById(R.id.rv);
-        adapter = new ColorAdapter(colorsList, colorDict);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     // TODO: Add options menu with the item "Info" which is always visible
